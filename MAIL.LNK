@@ -1,0 +1,7 @@
+system nt
+#option map=mail
+#option stack=40000
+#debug  all
+LIB    wsock32.LIB
+file   mail
+name   mail

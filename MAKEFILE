@@ -1,0 +1,20 @@
+all: mail.exe
+
+mail.obj: mail.c
+#  wcc386 -mf -bt=NT -fp5 -3s -s -w3 -ze -od -d2 -5r -zp4 -zq mail.c
+   wcc386 mail.c
+
+mail.exe: mail.obj
+	wlink @<<$(@B).lnk
+system nt
+#option map=mail
+#option stack=40000
+#debug  all
+LIB    wsock32.LIB
+file   mail
+name   mail
+<<keep
+
+clean:
+   del mail.exe
+   del mail.obj
